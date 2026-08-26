@@ -20,8 +20,7 @@ RSpec.describe UserProfile, type: :model do
     @user_profile = create(:user_profile)
   end
   describe "User model column tests" do
-    it "has a bui column" do
-      binding.pry
+    it "has a bio column" do
       expect(@user_profile.bio).to_not be(nil)
     end
   end

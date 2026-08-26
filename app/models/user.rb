@@ -41,6 +41,8 @@ class User < ApplicationRecord
 
   has_one :user_settings, dependent: :destroy
   has_one :user_profile, dependent: :destroy
+
+  has_many :articles
   has_many :user_credentials, dependent: :destroy
 
   after_create :create_user_associations

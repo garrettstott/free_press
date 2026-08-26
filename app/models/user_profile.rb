@@ -16,4 +16,5 @@
 class UserProfile < ApplicationRecord
   belongs_to :user
   has_one_attached :avatar
+  has_many :user_profile_links
 end

@@ -40,13 +40,15 @@ class User < ApplicationRecord
          :trackable, :omniauthable
 
   has_one :user_settings, dependent: :destroy
+  has_one :user_profile, dependent: :destroy
   has_many :user_credentials, dependent: :destroy
 
-  after_create :create_user_settings
+  after_create :create_user_associations
 
   private
 
-  def create_user_settings
+  def create_user_associations
     UserSettings.create!(user_id: self.id)
+    UserProfile.create!(user_id: self.id)
   end
 end
